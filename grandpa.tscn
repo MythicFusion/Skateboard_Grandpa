@@ -2,15 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dgj06lsxe4smp" path="res://grandpa.gd" id="1_0l84m"]
 [ext_resource type="Texture2D" uid="uid://c6rxa22d6whlp" path="res://icon.svg" id="2_5mhso"]
+[ext_resource type="Script" uid="uid://hanygyj5ctmo" path="res://state_machine.gd" id="3_5mhso"]
+[ext_resource type="Script" uid="uid://c5f3deebn0qhf" path="res://ground_state.gd" id="4_lyg54"]
+[ext_resource type="Script" uid="uid://d1vrxrwibp023" path="res://air_state.gd" id="5_cu38i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mtla"]
 radius = 9.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1013021800]
+[node name="Grandpa" type="CharacterBody2D" unique_id=1013021800]
 collision_layer = 0
 floor_max_angle = 1.5707964
-floor_snap_length = 100.0
+floor_snap_length = 15.3
 script = ExtResource("1_0l84m")
+jump_speed = -300.0
+gravity = 500.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=827406517]
 scale = Vector2(0.15, 0.15)
@@ -20,3 +25,17 @@ texture = ExtResource("2_5mhso")
 shape = SubResource("CircleShape2D_4mtla")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1657610498]
+
+[node name="state_machine" type="Node" parent="." unique_id=460826164 node_paths=PackedStringArray("starting_state")]
+script = ExtResource("3_5mhso")
+starting_state = NodePath("Ground_State")
+
+[node name="Ground_State" type="Node" parent="state_machine" unique_id=1006272920 node_paths=PackedStringArray("air_state")]
+script = ExtResource("4_lyg54")
+air_state = NodePath("../Air_State")
+metadata/_custom_type_script = "uid://c2gd0d07exos0"
+
+[node name="Air_State" type="Node" parent="state_machine" unique_id=792159245 node_paths=PackedStringArray("ground_state")]
+script = ExtResource("5_cu38i")
+ground_state = NodePath("../Ground_State")
+metadata/_custom_type_script = "uid://c2gd0d07exos0"

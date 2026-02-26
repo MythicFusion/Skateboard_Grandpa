@@ -15,5 +15,6 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Skateboard Grandpa"
+run/main_scene="uid://cwob5my5ga53l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6rxa22d6whlp"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://c0mcfgv81nniw"
+path="res://.godot/imported/Old man heads.svg-25e1d78f87a47477f58b59cac87eb601.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://Old man heads.svg"
+dest_files=["res://.godot/imported/Old man heads.svg-25e1d78f87a47477f58b59cac87eb601.ctex"]
 
 [params]
 

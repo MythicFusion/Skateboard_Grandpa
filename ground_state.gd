@@ -4,10 +4,11 @@ extends State
 @export var air_state: State
 
 func process_input(event: InputEvent) -> State:
+	if Input.is_action_just_pressed("boost"):
+		parent.velocity.x += parent.boost_speed
 	if Input.is_action_just_pressed("jump"):
 		parent.floor_snap_length = 0.0
 		parent.velocity.y += parent.jump_speed
-		parent.rotation_degrees = 0
 		return air_state
 	return null
 
@@ -19,10 +20,12 @@ func process_physics(delta: float) -> State:
 	if (direction.y < 0):
 		direction = -1*direction 
 	var angle_between = parent.prev_velocity.angle_to(normal.orthogonal())
-	parent.acceleration = direction * parent.gravity * delta
+	parent.acceleration.x = normal.x * parent.gravity * delta
+	parent.acceleration.y = direction.y * parent.gravity * delta
 	parent.velocity += parent.acceleration
-	#if (direction.y < 0):
-		#velocity.x += -direction.x * friction
+	#if (direction.angle() > 0):
+		#parent.velocity.x += -direction.x * parent.friction * delta
+	
 	var surface_angle = normal.angle()*180/PI
 	parent.rotation_degrees = surface_angle+90
 	parent.prev_velocity = parent.velocity

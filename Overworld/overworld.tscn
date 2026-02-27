@@ -4,13 +4,16 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alffl"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v4f2"]
+size = Vector2(382, 20)
+
 [node name="Overworld" type="Node2D" unique_id=1487637528]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=271425924]
 physics_material_override = SubResource("PhysicsMaterial_alffl")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=10674902]
-position = Vector2(61, 24)
+position = Vector2(48, -41)
 build_mode = 1
 polygon = PackedVector2Array(-18, -84, 25, 17, 42, 34, 58, 40, 178, 41, 218, 17, 233, -7, 248, -43, 248, -72, 297, -15, 307, 60, 242, 111, 191, 119, -1, 122)
 
@@ -18,6 +21,19 @@ polygon = PackedVector2Array(-18, -84, 25, 17, 42, 34, 58, 40, 178, 41, 218, 17,
 position = Vector2(59, -112)
 floor_stop_on_slope = false
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1234551943]
-position = Vector2(181, -9)
-zoom = Vector2(3, 3)
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1234551943]
+position = Vector2(3, 1)
+zoom = Vector2(2, 2)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1860061102]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1006549945]
+position = Vector2(-176, 238)
+shape = SubResource("RectangleShape2D_7v4f2")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2141266000]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=390161690]
+position = Vector2(-263, 227)
+rotation = -0.75775105
+shape = SubResource("RectangleShape2D_7v4f2")

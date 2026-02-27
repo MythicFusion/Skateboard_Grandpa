@@ -3,6 +3,7 @@ class_name Player
 
 @export var speed = 300.0
 @export var jump_speed = -400.0
+@export var boost_speed = 300
 @export var gravity = 400.0
 @export var friction = 200
 @onready var snap_length = floor_snap_length

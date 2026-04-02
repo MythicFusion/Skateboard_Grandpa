@@ -19,10 +19,6 @@ run/main_scene="uid://cwob5my5ga53l"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-player_global="*uid://xqlog46ddltj"
-
 [input]
 
 jump={

@@ -8,7 +8,7 @@ func process_input(event: InputEvent) -> State:
 		parent.velocity.x += parent.boost_speed
 	if Input.is_action_just_pressed("jump"):
 		parent.floor_snap_length = 0.0
-		parent.velocity.y += parent.jump_speed
+		parent.velocity.y += parent.current_jump_speed
 		return air_state
 	return null
 

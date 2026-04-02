@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cwob5my5ga53l"]
 
 [ext_resource type="PackedScene" uid="uid://cisshhs0lhuty" path="res://grandpa.tscn" id="1_7v4f2"]
+[ext_resource type="PackedScene" uid="uid://dse8tsnr01rf3" path="res://node_2d.tscn" id="2_mwgaf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alffl"]
 
@@ -18,7 +19,7 @@ build_mode = 1
 polygon = PackedVector2Array(-18, -84, 25, 17, 42, 34, 58, 40, 178, 41, 218, 17, 233, -7, 248, -43, 248, -72, 297, -15, 307, 60, 242, 111, 191, 119, -1, 122)
 
 [node name="CharacterBody2D" parent="." unique_id=1013021800 instance=ExtResource("1_7v4f2")]
-position = Vector2(59, -112)
+position = Vector2(13, 82)
 floor_stop_on_slope = false
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1234551943]
@@ -34,6 +35,10 @@ shape = SubResource("RectangleShape2D_7v4f2")
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2141266000]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=390161690]
-position = Vector2(-263, 227)
+position = Vector2(-98, 227)
 rotation = -0.75775105
 shape = SubResource("RectangleShape2D_7v4f2")
+
+[node name="Node2D" parent="." unique_id=611429648 instance=ExtResource("2_mwgaf")]
+position = Vector2(-112, 224)
+rotation = -0.7610078

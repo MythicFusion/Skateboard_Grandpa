@@ -6,7 +6,10 @@
 [ext_resource type="Script" uid="uid://c5f3deebn0qhf" path="res://ground_state.gd" id="4_lyg54"]
 [ext_resource type="Script" uid="uid://d1vrxrwibp023" path="res://air_state.gd" id="5_cu38i"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cu38i"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_cu38i"]
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5u4oo"]
 
 [node name="Grandpa" type="CharacterBody2D" unique_id=1013021800]
 collision_layer = 0
@@ -22,9 +25,10 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_5mhso")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1112287585]
-shape = SubResource("RectangleShape2D_cu38i")
+shape = SubResource("CircleShape2D_cu38i")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1657610498]
+target_position = Vector2(0, 25)
 
 [node name="state_machine" type="Node" parent="." unique_id=460826164 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("3_5mhso")
@@ -39,3 +43,12 @@ metadata/_custom_type_script = "uid://c2gd0d07exos0"
 script = ExtResource("5_cu38i")
 ground_state = NodePath("../Ground_State")
 metadata/_custom_type_script = "uid://c2gd0d07exos0"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=211453810]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=818679596]
+shape = SubResource("CircleShape2D_5u4oo")
+debug_color = Color(0.33885375, 0.62195224, 1.1551381e-06, 0.41960785)
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

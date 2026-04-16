@@ -50,5 +50,9 @@ metadata/_custom_type_script = "uid://c2gd0d07exos0"
 shape = SubResource("CircleShape2D_5u4oo")
 debug_color = Color(0.33885375, 0.62195224, 1.1551381e-06, 0.41960785)
 
+[node name="Edge_Ray" type="RayCast2D" parent="." unique_id=506611083]
+position = Vector2(12, 1)
+target_position = Vector2(0, 53)
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

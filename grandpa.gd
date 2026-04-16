@@ -14,6 +14,7 @@ class_name Player
 var current_jump_speed: float
 
 @onready var raycast: RayCast2D = $RayCast2D
+@onready var edge_ray: RayCast2D = $Edge_Ray
 @onready var state_machine = $state_machine
 
 func _ready() -> void:
@@ -33,8 +34,10 @@ func _process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	added_points = area.points_given
 	current_jump_speed += area.jump_boost
+	#floor_snap_length = 0.0
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
 	added_points = 0
-	current_jump_speed += jump_speed
+	current_jump_speed = jump_speed
+	#floor_snap_length = snap_length

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cexkloeuuima4"]
+
+[ext_resource type="Script" uid="uid://bad4oh75vieer" path="res://Level_Design_Objects/Scripts/ground.gd" id="1_t7tip"]
+[ext_resource type="Texture2D" uid="uid://clasi8jovsm2p" path="res://Assets/A_Environment_Album/E_Ground.png" id="2_tv015"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wnojy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc5i5"]
+size = Vector2(644, 30.039326)
+
+[node name="Ground" type="StaticBody2D" unique_id=1983072649]
+physics_material_override = SubResource("PhysicsMaterial_wnojy")
+script = ExtResource("1_t7tip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1760013456]
+position = Vector2(0, 0.60749704)
+scale = Vector2(0.30676436, 0.30676436)
+shape = SubResource("RectangleShape2D_yc5i5")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=1402651763]
+position = Vector2(16.299156, -22.818819)
+texture = ExtResource("2_tv015")

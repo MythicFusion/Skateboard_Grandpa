@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bptiioumjm5mb"]
+
+[ext_resource type="Script" uid="uid://dpbqkjsc1w1qy" path="res://UI/ui.gd" id="1_fyqef"]
+
+[node name="UI" type="Control" unique_id=1237983908]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fyqef")
+
+[node name="Point_Total" type="Label" parent="." unique_id=246902245]
+layout_mode = 0
+offset_right = 196.0
+offset_bottom = 68.0

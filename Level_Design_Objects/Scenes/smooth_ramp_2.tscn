@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://p8tj1nc1w5s8"]
+
+[ext_resource type="Script" uid="uid://gj8ygoogua7x" path="res://Level_Design_Objects/Scripts/smooth_ramp_2.gd" id="1_ocx1s"]
+[ext_resource type="Texture2D" uid="uid://ba3g8ilu52otp" path="res://Assets/A_Environment_Album/E_Smooth_2.png" id="2_bq3mo"]
+
+[node name="Smooth_Ramp_2" type="StaticBody2D" unique_id=455641352]
+script = ExtResource("1_ocx1s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=331228515]
+texture = ExtResource("2_bq3mo")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1318501336]
+polygon = PackedVector2Array(-192, 43, -67, 42, -36, 29, -13, 8, 5, -18, 19, -51, 31, -77, 49, -100, 72, -120, 93, -134, 110, -141, 191, -140, 191, 69, -192, 69)

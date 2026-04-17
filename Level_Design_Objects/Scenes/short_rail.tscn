@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bp26qrigt5t2j"]
+
+[ext_resource type="Script" uid="uid://nhwsbis3mbfp" path="res://Level_Design_Objects/Scripts/short_rail.gd" id="1_yxb2e"]
+[ext_resource type="Texture2D" uid="uid://dh8thpxle4t8c" path="res://Assets/A_Environment_Album/E_Rail.png" id="2_soox3"]
+[ext_resource type="Texture2D" uid="uid://cpllrh5u0w66d" path="res://Assets/A_Environment_Album/E_Pole-Rail_v2.svg" id="3_vf2le"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c6en8"]
+size = Vector2(890, 20)
+
+[node name="Short_Rail" type="StaticBody2D" unique_id=462810062]
+script = ExtResource("1_yxb2e")
+
+[node name="ERail" type="Sprite2D" parent="." unique_id=1684557612]
+position = Vector2(0, -15.999996)
+scale = Vector2(1, 0.66497463)
+texture = ExtResource("2_soox3")
+
+[node name="EPoleRailV2" type="Sprite2D" parent="." unique_id=1282526485]
+position = Vector2(-285, 40.000004)
+scale = Vector2(0.34365752, 0.41497463)
+texture = ExtResource("3_vf2le")
+
+[node name="EPoleRailV3" type="Sprite2D" parent="." unique_id=108523059]
+position = Vector2(252, 41)
+scale = Vector2(0.35642344, 0.41497463)
+texture = ExtResource("3_vf2le")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1412124340]
+visible = false
+position = Vector2(-6, -20)
+shape = SubResource("RectangleShape2D_c6en8")

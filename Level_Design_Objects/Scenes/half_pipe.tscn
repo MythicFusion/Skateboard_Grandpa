@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cd16607u4oejx"]
+
+[ext_resource type="Script" uid="uid://1hbpo2dboaph" path="res://Level_Design_Objects/Scripts/half_pipe.gd" id="1_wetbp"]
+[ext_resource type="Texture2D" uid="uid://sr1jkggwvyjk" path="res://Assets/A_Environment_Album/E_Halfpipe.png" id="1_x5u00"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wetbp"]
+
+[node name="Half_Pipe" type="StaticBody2D" unique_id=1542110678]
+physics_material_override = SubResource("PhysicsMaterial_wetbp")
+script = ExtResource("1_wetbp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=839859255]
+texture = ExtResource("1_x5u00")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1909992661]
+polygon = PackedVector2Array(-286, 175, -197, 175, -147, 165, -104, 150, -54, 130, -4, 101, 48, 67, 94, 28, 133, -14, 165, -62, 189, -113, 204, -158, 211, -184, 214, -205, 288, -206, 288, 203, -286, 204)

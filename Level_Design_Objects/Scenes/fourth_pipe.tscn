@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bffrfxu130d8i"]
+
+[ext_resource type="Script" uid="uid://bvnkep7w8wwjd" path="res://Level_Design_Objects/Scripts/fourth_pipe.gd" id="1_1bnas"]
+[ext_resource type="Texture2D" uid="uid://das3mw1slhaxp" path="res://Assets/A_Environment_Album/E_Fourthpipe.png" id="2_8qyyh"]
+
+[node name="Fourth_Pipe" type="StaticBody2D" unique_id=833572789]
+script = ExtResource("1_1bnas")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1484192767]
+texture = ExtResource("2_8qyyh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1561660241]
+polygon = PackedVector2Array(-310, 84, -192, 84, -107, 65, -28, 40, 66, -5, 149, -62, 221, -131, 306, -131, 306, 106, -310, 106)

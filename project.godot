@@ -23,6 +23,11 @@ config/icon="res://icon.svg"
 
 player_global="*uid://xqlog46ddltj"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/Bigna/Downloads/csce 331 project demo.avi"
+movie_writer/disable_vsync=true
+
 [input]
 
 jump={

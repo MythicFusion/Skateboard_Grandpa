@@ -12,6 +12,10 @@ size = Vector2(12.5, 15)
 
 [node name="Ramp_Jump" type="Node2D" unique_id=611429648]
 script = ExtResource("1_wtcfe")
+points_given = null
+jump_boost = null
+sweet_spot_points_given = null
+sweet_spot_jump_boost = null
 
 [node name="Ramp_Jump_Area" type="Area2D" parent="." unique_id=669435808]
 script = ExtResource("2_0e48y")

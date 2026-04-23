@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bp26qrigt5t2j"]
 
 [ext_resource type="Script" uid="uid://nhwsbis3mbfp" path="res://Level_Design_Objects/Scripts/short_rail.gd" id="1_yxb2e"]
-[ext_resource type="Texture2D" uid="uid://dh8thpxle4t8c" path="res://Assets/A_Environment_Album/E_Rail.png" id="2_soox3"]
-[ext_resource type="Texture2D" uid="uid://cpllrh5u0w66d" path="res://Assets/A_Environment_Album/E_Pole-Rail_v2.svg" id="3_vf2le"]
+[ext_resource type="Texture2D" uid="uid://dh8thpxle4t8c" path="res://Art_Assets/A_Environment_Album/E_Rail.png" id="2_soox3"]
+[ext_resource type="Texture2D" uid="uid://cpllrh5u0w66d" path="res://Art_Assets/A_Environment_Album/E_Pole-Rail_v2.svg" id="3_vf2le"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c6en8"]
 size = Vector2(890, 20)
@@ -26,6 +26,5 @@ scale = Vector2(0.35642344, 0.41497463)
 texture = ExtResource("3_vf2le")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1412124340]
-visible = false
 position = Vector2(-6, -20)
 shape = SubResource("RectangleShape2D_c6en8")

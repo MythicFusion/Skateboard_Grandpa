@@ -4,23 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://bptiioumjm5mb" path="res://UI/ui.tscn" id="2_2pj3o"]
 [ext_resource type="PackedScene" uid="uid://dse8tsnr01rf3" path="res://Level_Design_Objects/Scenes/ramp_jump.tscn" id="2_mwgaf"]
 [ext_resource type="PackedScene" uid="uid://cexkloeuuima4" path="res://Level_Design_Objects/Scenes/ground.tscn" id="4_begid"]
-[ext_resource type="PackedScene" uid="uid://cd16607u4oejx" path="res://Level_Design_Objects/Scenes/half_pipe.tscn" id="5_h6jj6"]
+[ext_resource type="PackedScene" uid="uid://bffrfxu130d8i" path="res://Level_Design_Objects/Scenes/fourth_pipe.tscn" id="5_h6jj6"]
+[ext_resource type="PackedScene" uid="uid://cd16607u4oejx" path="res://Level_Design_Objects/Scenes/half_pipe.tscn" id="6_h2pad"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_alffl"]
 
 [node name="Overworld" type="Node2D" unique_id=1487637528]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=271425924]
-position = Vector2(-1266, -183)
-physics_material_override = SubResource("PhysicsMaterial_alffl")
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=10674902]
-position = Vector2(439, 152)
-build_mode = 1
-polygon = PackedVector2Array(-18, -84, 25, 17, 42, 34, 58, 40, 178, 41, 218, 17, 241, -2, 269, -38, 297, -15, 307, 60, 242, 111, 191, 119, -1, 122)
-
 [node name="CharacterBody2D" parent="." unique_id=1013021800 instance=ExtResource("1_7v4f2")]
-position = Vector2(-138, 405)
+position = Vector2(110, 327)
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1234551943]
 position = Vector2(3, 1)
@@ -29,16 +21,64 @@ zoom = Vector2(2, 2)
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D/Camera2D" unique_id=1370463531]
 
 [node name="UI" parent="CharacterBody2D/Camera2D/CanvasLayer" unique_id=1237983908 instance=ExtResource("2_2pj3o")]
+visible = false
 
 [node name="Ground" parent="." unique_id=1983072649 instance=ExtResource("4_begid")]
 position = Vector2(-47, 486)
-scale = Vector2(2.4156413, 2.4156413)
+scale = Vector2(1.9511365, 1.9511365)
 
 [node name="Ramp_Jump" parent="." unique_id=611429648 instance=ExtResource("2_mwgaf")]
-position = Vector2(372.99997, 348.99997)
-rotation = -1.2391838
-scale = Vector2(0.5, 0.5)
+position = Vector2(349.99997, 405.99997)
+rotation = -0.7993608
+scale = Vector2(0.8385682, 0.8385682)
+points_given = 5
+jump_boost = -75.0
+sweet_spot_points_given = 10
+sweet_spot_jump_boost = -90.0
 
-[node name="Half_Pipe" parent="." unique_id=1542110678 instance=ExtResource("5_h6jj6")]
-position = Vector2(301, 408)
-scale = Vector2(0.38205057, 0.38205057)
+[node name="Fourth_Pipe" parent="." unique_id=833572789 instance=ExtResource("5_h6jj6")]
+position = Vector2(285, 441)
+scale = Vector2(0.45135602, 0.45135602)
+
+[node name="Fourth_Pipe2" parent="." unique_id=1399069191 instance=ExtResource("5_h6jj6")]
+position = Vector2(742.99994, 440.99997)
+scale = Vector2(-0.457854, 0.457854)
+
+[node name="Half_Pipe" parent="." unique_id=1542110678 instance=ExtResource("6_h2pad")]
+position = Vector2(1061, 370)
+scale = Vector2(0.62265366, 0.62265366)
+
+[node name="Ground2" parent="." unique_id=1656742075 instance=ExtResource("4_begid")]
+position = Vector2(1904, 157)
+scale = Vector2(1.998202, 1.998202)
+
+[node name="Fourth_Pipe3" parent="." unique_id=1317642028 instance=ExtResource("5_h6jj6")]
+position = Vector2(2235, 206.00003)
+scale = Vector2(-0.436, 0.436)
+
+[node name="Ramp_Jump2" parent="." unique_id=511675871 instance=ExtResource("2_mwgaf")]
+position = Vector2(1182.0001, 279.00003)
+rotation = -1.4556046
+scale = Vector2(0.8016933, 0.8016933)
+points_given = 15
+jump_boost = -75.0
+sweet_spot_points_given = 10
+sweet_spot_jump_boost = -90.0
+
+[node name="Ground3" parent="." unique_id=2046005936 instance=ExtResource("4_begid")]
+position = Vector2(2172, 533)
+scale = Vector2(24.580553, 8.300254)
+
+[node name="Half_Pipe2" parent="." unique_id=1229500806 instance=ExtResource("6_h2pad")]
+position = Vector2(2549, 374)
+scale = Vector2(-0.623, 0.623)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=271425924]
+visible = false
+position = Vector2(-1266, -183)
+physics_material_override = SubResource("PhysicsMaterial_alffl")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=10674902]
+position = Vector2(439, 152)
+build_mode = 1
+polygon = PackedVector2Array(-18, -84, 25, 17, 42, 34, 58, 40, 178, 41, 218, 17, 241, -2, 269, -38, 297, -15, 307, 60, 242, 111, 191, 119, -1, 122)

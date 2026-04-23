@@ -12,7 +12,7 @@ radius = 9.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_5u4oo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cu38i"]
-size = Vector2(20, 11)
+size = Vector2(20, 19.5)
 
 [node name="Grandpa" type="CharacterBody2D" unique_id=1013021800]
 collision_layer = 0
@@ -63,6 +63,7 @@ position = Vector2(0, 13)
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Land_Trick_Area" unique_id=2103281117]
+position = Vector2(0, 4.25)
 shape = SubResource("RectangleShape2D_cu38i")
 debug_color = Color(0.7364422, 0.42088786, 0.066847675, 0.41960785)
 

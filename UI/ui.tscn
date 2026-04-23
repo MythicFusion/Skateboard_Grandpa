@@ -2,6 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dpbqkjsc1w1qy" path="res://UI/ui.gd" id="1_fyqef"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_2fwl4"]
+font_size = 25
+shadow_size = 6
+shadow_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="Control" unique_id=1237983908]
 layout_mode = 3
 anchors_preset = 15
@@ -15,3 +20,7 @@ script = ExtResource("1_fyqef")
 layout_mode = 0
 offset_right = 196.0
 offset_bottom = 68.0
+text = "Points:"
+label_settings = SubResource("LabelSettings_2fwl4")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -14,7 +14,6 @@ texture = ExtResource("2_8qyyh")
 polygon = PackedVector2Array(-310, 84, -192, 84, -107, 65, -28, 40, 66, -5, 149, -62, 221, -131, 306, -131, 306, 106, -310, 106)
 
 [node name="Ramp_Jump" parent="." unique_id=611429648 instance=ExtResource("3_8qyyh")]
-position = Vector2(144, -74)
+position = Vector2(133, -57)
 rotation = -0.78273314
 scale = Vector2(2, 2)
-jump_boost = -200.0

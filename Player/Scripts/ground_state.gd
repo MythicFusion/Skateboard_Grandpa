@@ -56,7 +56,7 @@ func process_physics(delta: float) -> State:
 		#parent.velocity.x += -direction.x * parent.friction * delta
 	
 	if parent.increase_rail_speed and parent.velocity.y >= 0:
-		parent.velocity.x = parent.velocity.x * 0.25 + parent.rail_speed
+		parent.velocity.x = parent.velocity.x*0.5 + parent.rail_speed
 	
 	#Makes sure the player is always oriented along the slope
 	var surface_angle = normal.angle()*180/PI

@@ -15,6 +15,10 @@ func process_input(event: InputEvent) -> State:
 func process_physics(delta: float) -> State:
 	if !parent.edge_ray.enabled:
 		parent.edge_ray.enabled = true
+	if parent.velocity.y > 0:
+		parent.set_collision_mask_value(3, true)
+	elif parent.velocity.y < 0:
+		parent.set_collision_mask_value(3,false)
 	if !parent.is_on_floor():
 		parent.velocity.y += parent.gravity * delta
 	else:

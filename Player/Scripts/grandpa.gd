@@ -22,7 +22,7 @@ var current_jump_speed: float
 @onready var jump_trick_area: Area2D = $Jump_Trick_Area
 @onready var land_trick_area: Area2D = $Land_Trick_Area
 var land_trick_area_ground_type: String
-@onready var land_trick_added_points: int = 5
+@onready var land_trick_added_points: int = 7
 @onready var state_machine = $state_machine
 
 @onready var rolling_sfx = $Rolling_SFX
@@ -76,7 +76,4 @@ func _on_land_trick_area_body_exited(body: Node2D) -> void:
 	land_trick_area_ground_type = body.ground_type
 	increase_rail_speed = false
 	added_points = 0
-	if land_trick_area_ground_type == "RAIL":
-		print("exit")
-	if velocity.y > 0:
-		set_collision_mask_value(3, false)
+	return

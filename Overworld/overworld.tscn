@@ -3,10 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://cisshhs0lhuty" path="res://Player/grandpa.tscn" id="1_7v4f2"]
 [ext_resource type="PackedScene" uid="uid://bptiioumjm5mb" path="res://UI/ui.tscn" id="2_2pj3o"]
 [ext_resource type="PackedScene" uid="uid://dse8tsnr01rf3" path="res://Level_Design_Objects/Scenes/ramp_jump.tscn" id="2_mwgaf"]
+[ext_resource type="Script" uid="uid://c800wti4c508q" path="res://Overworld/canvas_layer.gd" id="2_yv805"]
 [ext_resource type="PackedScene" uid="uid://cexkloeuuima4" path="res://Level_Design_Objects/Scenes/ground.tscn" id="4_begid"]
 [ext_resource type="PackedScene" uid="uid://bffrfxu130d8i" path="res://Level_Design_Objects/Scenes/fourth_pipe.tscn" id="5_h6jj6"]
 [ext_resource type="PackedScene" uid="uid://p8tj1nc1w5s8" path="res://Level_Design_Objects/Scenes/smooth_ramp_2.tscn" id="6_h2pad"]
 [ext_resource type="PackedScene" uid="uid://bp26qrigt5t2j" path="res://Level_Design_Objects/Scenes/short_rail.tscn" id="7_hob5j"]
+[ext_resource type="PackedScene" uid="uid://b4ihg2f6yso2v" path="res://end_level.tscn" id="9_r0nop"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_r0nop"]
+font_size = 22
 
 [sub_resource type="LabelSettings" id="LabelSettings_h2pad"]
 
@@ -14,18 +19,37 @@
 
 [node name="Overworld" type="Node2D" unique_id=1487637528]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1370463531]
+script = ExtResource("2_yv805")
+
+[node name="UI" parent="CanvasLayer" unique_id=1237983908 instance=ExtResource("2_2pj3o")]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1717982550]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1178525987]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_r0nop")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="CharacterBody2D" parent="." unique_id=1013021800 instance=ExtResource("1_7v4f2")]
-position = Vector2(6393, 238)
+position = Vector2(-168, 419)
+floor_snap_length = 17.0
+boost_speed = 500
+max_speed = 500
 friction = 30
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1234551943]
 position = Vector2(3, 1)
-zoom = Vector2(2, 2)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D/Camera2D" unique_id=1370463531]
-
-[node name="UI" parent="CharacterBody2D/Camera2D/CanvasLayer" unique_id=1237983908 instance=ExtResource("2_2pj3o")]
-visible = false
 
 [node name="Ground" parent="." unique_id=1983072649 instance=ExtResource("4_begid")]
 position = Vector2(-47, 486)
@@ -95,10 +119,10 @@ position = Vector2(3571, 344)
 scale = Vector2(0.451, 0.451)
 
 [node name="Label3" type="Label" parent="." unique_id=721044146]
-offset_left = 3747.0
-offset_top = 12.0
-offset_right = 4034.0
-offset_bottom = 35.0
+offset_left = 3898.0
+offset_top = -4.0
+offset_right = 4190.0
+offset_bottom = 19.0
 text = "Press (X) when landing to earn points."
 
 [node name="Ground10" parent="." unique_id=787162389 instance=ExtResource("4_begid")]
@@ -110,10 +134,10 @@ position = Vector2(4690, 293)
 scale = Vector2(1.998, 1.998)
 
 [node name="Label4" type="Label" parent="." unique_id=1666072249]
-offset_left = 4043.0
-offset_top = 182.0
-offset_right = 4448.0
-offset_bottom = 205.0
+offset_left = 4296.0
+offset_top = 177.0
+offset_right = 4701.0
+offset_bottom = 200.0
 text = "Pressing (X) when landing on rails gives more points."
 
 [node name="Short_Rail3" parent="." unique_id=551250496 instance=ExtResource("7_hob5j")]
@@ -148,22 +172,88 @@ position = Vector2(6309.0005, 290)
 scale = Vector2(1.998, 1.998)
 
 [node name="Smooth_Ramp_2" parent="." unique_id=455641352 instance=ExtResource("6_h2pad")]
-position = Vector2(6696, 422)
-scale = Vector2(-1, 1)
+position = Vector2(6809.9995, 426)
+scale = Vector2(-1.56, 1)
 
 [node name="Smooth_Ramp_3" parent="." unique_id=1647609453 instance=ExtResource("6_h2pad")]
-position = Vector2(7078, 441)
+position = Vector2(7301, 445)
 scale = Vector2(1, 0.554)
 
 [node name="Ramp_Jump" parent="." unique_id=611429648 instance=ExtResource("2_mwgaf")]
-position = Vector2(7089.0005, 407.99982)
+position = Vector2(7312.0005, 411.99982)
 rotation = -0.5483787
 scale = Vector2(2.1352086, 1.5102085)
 
 [node name="Short_Rail" parent="." unique_id=462810062 instance=ExtResource("7_hob5j")]
-position = Vector2(7674, 198.99998)
+position = Vector2(8031, 206)
 scale = Vector2(0.171, 0.171)
 
 [node name="Short_Rail5" parent="." unique_id=1102172203 instance=ExtResource("7_hob5j")]
-position = Vector2(7964, 125)
+position = Vector2(8321, 132)
 scale = Vector2(0.171, 0.171)
+
+[node name="Ground15" parent="." unique_id=1637014231 instance=ExtResource("4_begid")]
+position = Vector2(7687.0005, 376)
+scale = Vector2(1.998, 1.998)
+
+[node name="End_Level" parent="." unique_id=931228071 instance=ExtResource("9_r0nop")]
+position = Vector2(11696, -380.99994)
+scale = Vector2(33.716927, 126.39693)
+
+[node name="Ground16" parent="." unique_id=543011940 instance=ExtResource("4_begid")]
+position = Vector2(8081, 376)
+scale = Vector2(1.998, 1.998)
+
+[node name="Fourth_Pipe2" parent="." unique_id=1965792954 instance=ExtResource("5_h6jj6")]
+position = Vector2(8462, 318)
+scale = Vector2(0.6, 0.6)
+
+[node name="Ground17" parent="." unique_id=214048902 instance=ExtResource("4_begid")]
+position = Vector2(8838, 247)
+scale = Vector2(1.998, 1.998)
+
+[node name="Fourth_Pipe3" parent="." unique_id=800377617 instance=ExtResource("5_h6jj6")]
+position = Vector2(9460, -22.2247)
+scale = Vector2(0.6, 0.6)
+
+[node name="Smooth_Ramp_4" parent="." unique_id=1620850864 instance=ExtResource("6_h2pad")]
+position = Vector2(9301.999, 380)
+scale = Vector2(-1.4, 1)
+
+[node name="Short_Rail8" parent="." unique_id=556396729 instance=ExtResource("7_hob5j")]
+position = Vector2(10362, -157)
+rotation = 3.1415927
+scale = Vector2(0.171, -0.171)
+
+[node name="Short_Rail6" parent="." unique_id=1963841209 instance=ExtResource("7_hob5j")]
+position = Vector2(10602.001, -83.99999)
+scale = Vector2(0.171, 0.171)
+
+[node name="Short_Rail7" parent="." unique_id=1493263739 instance=ExtResource("7_hob5j")]
+position = Vector2(11195.001, -56)
+scale = Vector2(0.171, 0.171)
+
+[node name="Smooth_Ramp_5" parent="." unique_id=1679460743 instance=ExtResource("6_h2pad")]
+position = Vector2(9833.999, 563)
+scale = Vector2(-1.4, 1)
+
+[node name="Short_Rail9" parent="." unique_id=2018168159 instance=ExtResource("7_hob5j")]
+position = Vector2(10873, -8.775257)
+rotation = 3.1415927
+scale = Vector2(0.171, -0.171)
+
+[node name="End_Level2" parent="." unique_id=84571599 instance=ExtResource("9_r0nop")]
+position = Vector2(1070, 1158.9999)
+scale = Vector2(33.716927, 62.276928)
+
+[node name="Ground18" parent="." unique_id=2063524513 instance=ExtResource("4_begid")]
+position = Vector2(10297.999, 614)
+scale = Vector2(1.998, 1.998)
+
+[node name="Fourth_Pipe5" parent="." unique_id=1238450559 instance=ExtResource("5_h6jj6")]
+position = Vector2(10681, 556)
+scale = Vector2(0.6, 0.6)
+
+[node name="Ground19" parent="." unique_id=713818295 instance=ExtResource("4_begid")]
+position = Vector2(11062, 485)
+scale = Vector2(1.998, 1.998)

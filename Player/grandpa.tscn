@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://cisshhs0lhuty"]
 
 [ext_resource type="Script" uid="uid://dgj06lsxe4smp" path="res://Player/Scripts/grandpa.gd" id="1_0l84m"]
-[ext_resource type="Texture2D" uid="uid://c6rxa22d6whlp" path="res://icon.svg" id="2_5mhso"]
+[ext_resource type="Texture2D" uid="uid://cjd26hl70q7u6" path="res://Art_Assets/A_Old_Man_Album/01_Oldman_Anim_01.svg" id="2_4gnhy"]
 [ext_resource type="Script" uid="uid://hanygyj5ctmo" path="res://Player/Scripts/state_machine.gd" id="3_5mhso"]
 [ext_resource type="Script" uid="uid://c5f3deebn0qhf" path="res://Player/Scripts/ground_state.gd" id="4_lyg54"]
 [ext_resource type="Script" uid="uid://d1vrxrwibp023" path="res://Player/Scripts/air_state.gd" id="5_cu38i"]
+[ext_resource type="Texture2D" uid="uid://cfl5fuiywr11k" path="res://Art_Assets/A_TalkingHeadSprites/Old_Neutral_Sprite.png" id="6_4gnhy"]
+[ext_resource type="Texture2D" uid="uid://o6krsnjwq6lm" path="res://Art_Assets/A_Skateboard_Album/01_stakeboard_M.png" id="7_30hu8"]
+[ext_resource type="Texture2D" uid="uid://cd53g3arxeybk" path="res://Art_Assets/A_Skateboard_Album/Wheel.png" id="8_a1cae"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cu38i"]
 radius = 9.0
@@ -12,7 +15,7 @@ radius = 9.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_5u4oo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cu38i"]
-size = Vector2(20, 19.5)
+size = Vector2(20, 23.687822)
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_5oiem"]
 loop_mode = 1
@@ -21,17 +24,14 @@ loop_mode = 1
 loop_mode = 1
 
 [node name="Grandpa" type="CharacterBody2D" unique_id=1013021800]
-collision_layer = 0
+scale = Vector2(3.2705073, 3.2705073)
+collision_layer = 8
 floor_max_angle = 1.553343
 floor_snap_length = 15.3
 script = ExtResource("1_0l84m")
 jump_speed = -300.0
 gravity = 500.0
 friction = 45
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=827406517]
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_5mhso")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1112287585]
 shape = SubResource("CircleShape2D_cu38i")
@@ -72,7 +72,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Land_Trick_Area" unique_id=2103281117]
-position = Vector2(0, 4.25)
+position = Vector2(0, 6.343914)
 shape = SubResource("RectangleShape2D_cu38i")
 debug_color = Color(0.7364422, 0.42088786, 0.066847675, 0.41960785)
 
@@ -81,6 +81,31 @@ stream = SubResource("AudioStreamWAV_5oiem")
 
 [node name="Rial_Grind_SFX" type="AudioStreamPlayer" parent="." unique_id=1582180169]
 stream = SubResource("AudioStreamWAV_4gnhy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=827406517]
+position = Vector2(2.7518668, -4.395732)
+scale = Vector2(0.032524277, 0.032524277)
+texture = ExtResource("2_4gnhy")
+
+[node name="OldNeutralSprite" type="Sprite2D" parent="." unique_id=851587463]
+position = Vector2(0.30576298, -10.51099)
+scale = Vector2(-0.0048442897, 0.0048442897)
+texture = ExtResource("6_4gnhy")
+
+[node name="01StakeboardM" type="Sprite2D" parent="." unique_id=1578370513]
+position = Vector2(0.10689159, 5.4955754)
+scale = Vector2(0.022840243, 0.022840243)
+texture = ExtResource("7_30hu8")
+
+[node name="Wheel" type="Sprite2D" parent="." unique_id=1026753701]
+position = Vector2(-5.1838174, 7.6722646)
+scale = Vector2(0.0011780148, 0.0011780148)
+texture = ExtResource("8_a1cae")
+
+[node name="Wheel2" type="Sprite2D" parent="." unique_id=796860470]
+position = Vector2(5.2121234, 7.6722636)
+scale = Vector2(0.0012209149, 0.0012209149)
+texture = ExtResource("8_a1cae")
 
 [connection signal="area_entered" from="Jump_Trick_Area" to="." method="_on_jump_trick_area_entered"]
 [connection signal="area_exited" from="Jump_Trick_Area" to="." method="_on_jump_trick_area_exited"]

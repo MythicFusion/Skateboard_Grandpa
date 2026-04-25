@@ -12,19 +12,16 @@ size = Vector2(12.5, 15)
 
 [node name="Ramp_Jump" type="Node2D" unique_id=611429648]
 script = ExtResource("1_wtcfe")
-points_given = null
-jump_boost = null
-sweet_spot_points_given = null
-sweet_spot_jump_boost = null
+jump_boost = -200.0
 
-[node name="Ramp_Jump_Area" type="Area2D" parent="." unique_id=669435808]
+[node name="Ramp_Jump_Area" type="Area2D" parent="." unique_id=170565878]
 script = ExtResource("2_0e48y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ramp_Jump_Area" unique_id=1877130600]
 position = Vector2(18.75, 0)
 shape = SubResource("RectangleShape2D_y32ns")
 
-[node name="Ramp_Sweet_Spot_Area" type="Area2D" parent="." unique_id=158155311]
+[node name="Ramp_Sweet_Spot_Area" type="Area2D" parent="." unique_id=2105451341]
 script = ExtResource("3_epypp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ramp_Sweet_Spot_Area" unique_id=232376365]

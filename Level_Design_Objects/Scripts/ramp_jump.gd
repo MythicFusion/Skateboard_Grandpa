@@ -19,13 +19,12 @@ extends Node2D
 var ramp_jump_length:float
 var ramp_sweet_spot_length:float
 
-func _ready() -> void:
+func _process(delta: float) -> void:	
 	ramp_jump.points_given = points_given
 	ramp_jump.jump_boost = jump_boost
 	ramp_sweet_spot.points_given = sweet_spot_points_given
 	ramp_sweet_spot.jump_boost = sweet_spot_jump_boost
-
-func _process(delta: float) -> void:
+	
 	ramp_jump_length = (1 - sweet_spot_percent) * length
 	ramp_sweet_spot_length = sweet_spot_percent * length
 	

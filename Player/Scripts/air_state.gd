@@ -5,6 +5,7 @@ extends State
 
 func enter() -> void:
 	parent.rotation_degrees = 0
+	parent.current_sfx.stop()
 
 func process_input(event: InputEvent) -> State:
 	if Input.is_action_just_pressed("trick"):
@@ -12,6 +13,8 @@ func process_input(event: InputEvent) -> State:
 	return null
 
 func process_physics(delta: float) -> State:
+	if !parent.edge_ray.enabled:
+		parent.edge_ray.enabled = true
 	if !parent.is_on_floor():
 		parent.velocity.y += parent.gravity * delta
 	else:

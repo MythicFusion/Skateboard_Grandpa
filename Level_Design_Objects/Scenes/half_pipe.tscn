@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cd16607u4oejx"]
 
 [ext_resource type="Script" uid="uid://1hbpo2dboaph" path="res://Level_Design_Objects/Scripts/half_pipe.gd" id="1_wetbp"]
-[ext_resource type="Texture2D" uid="uid://sr1jkggwvyjk" path="res://Assets/A_Environment_Album/E_Halfpipe.png" id="1_x5u00"]
+[ext_resource type="Texture2D" uid="uid://sr1jkggwvyjk" path="res://Art_Assets/A_Environment_Album/E_Halfpipe.png" id="1_x5u00"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wetbp"]
 

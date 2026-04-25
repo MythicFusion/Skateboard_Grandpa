@@ -14,7 +14,6 @@ func change_state(next_state: State) -> void:
 		current_state.exit()
 
 	current_state = next_state
-	print(current_state)
 	current_state.enter()
 
 func process_input(event: InputEvent) -> void:

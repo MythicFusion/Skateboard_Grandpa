@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://opw080qtj0af"
+path="res://.godot/imported/Rail Sound.wav-acfb9e9129f8a4b20c5f0970e50719cb.sample"
+
+[deps]
+
+source_file="res://SFX/Rail Sound.wav"
+dest_files=["res://.godot/imported/Rail Sound.wav-acfb9e9129f8a4b20c5f0970e50719cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

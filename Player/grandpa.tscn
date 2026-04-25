@@ -14,6 +14,12 @@ radius = 9.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cu38i"]
 size = Vector2(20, 19.5)
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_5oiem"]
+loop_mode = 1
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_4gnhy"]
+loop_mode = 1
+
 [node name="Grandpa" type="CharacterBody2D" unique_id=1013021800]
 collision_layer = 0
 floor_max_angle = 1.553343
@@ -21,7 +27,7 @@ floor_snap_length = 15.3
 script = ExtResource("1_0l84m")
 jump_speed = -300.0
 gravity = 500.0
-friction = 300
+friction = 45
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=827406517]
 scale = Vector2(0.15, 0.15)
@@ -32,6 +38,7 @@ shape = SubResource("CircleShape2D_cu38i")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1657610498]
 target_position = Vector2(0, 25)
+collision_mask = 5
 
 [node name="state_machine" type="Node" parent="." unique_id=460826164 node_paths=PackedStringArray("starting_state")]
 script = ExtResource("3_5mhso")
@@ -55,17 +62,25 @@ shape = SubResource("CircleShape2D_5u4oo")
 debug_color = Color(0.33885375, 0.62195224, 1.1551381e-06, 0.41960785)
 
 [node name="Edge_Ray" type="RayCast2D" parent="." unique_id=506611083]
-position = Vector2(12, 1)
-target_position = Vector2(0, 53)
+position = Vector2(14, 1)
+target_position = Vector2(0, 16)
+collision_mask = 5
 
 [node name="Land_Trick_Area" type="Area2D" parent="." unique_id=314738042]
 position = Vector2(0, 13)
 collision_layer = 0
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Land_Trick_Area" unique_id=2103281117]
 position = Vector2(0, 4.25)
 shape = SubResource("RectangleShape2D_cu38i")
 debug_color = Color(0.7364422, 0.42088786, 0.066847675, 0.41960785)
+
+[node name="Rolling_SFX" type="AudioStreamPlayer" parent="." unique_id=922540163]
+stream = SubResource("AudioStreamWAV_5oiem")
+
+[node name="Rial_Grind_SFX" type="AudioStreamPlayer" parent="." unique_id=1582180169]
+stream = SubResource("AudioStreamWAV_4gnhy")
 
 [connection signal="area_entered" from="Jump_Trick_Area" to="." method="_on_jump_trick_area_entered"]
 [connection signal="area_exited" from="Jump_Trick_Area" to="." method="_on_jump_trick_area_exited"]

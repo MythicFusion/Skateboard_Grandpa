@@ -12,7 +12,10 @@ func enter() -> void:
 func process_input(event: InputEvent) -> State:
 	#Boost Action
 	if Input.is_action_just_pressed("boost"):
-		parent.velocity.x += parent.boost_speed
+		if parent.velocity.length() < parent.max_speed:
+			parent.velocity.x += parent.boost_speed
+		if parent.velocity.length() > parent.max_speed:
+			parent.velocity.x = parent.max_speed
 		
 	#Jump Action
 	if Input.is_action_just_pressed("jump"):
@@ -26,7 +29,12 @@ func process_input(event: InputEvent) -> State:
 func process_physics(delta: float) -> State:
 	if !parent.is_on_floor():
 		return air_state
-		
+	
+	if (!parent.current_sfx.playing and abs(parent.velocity.x) != 0):
+		parent.current_sfx.play()
+	elif (abs(parent.velocity.x) == 0):
+		parent.current_sfx.stop()
+	
 	#Gets the current slope's direction vector 
 	var normal = parent.raycast.get_collision_normal()
 	var direction = normal.orthogonal()
@@ -40,8 +48,15 @@ func process_physics(delta: float) -> State:
 	parent.acceleration.x = normal.x * parent.gravity * delta
 	parent.acceleration.y = direction.y * parent.gravity * delta
 	parent.velocity += parent.acceleration
+	if parent.velocity.x > 0:
+		parent.velocity.x += -parent.friction * delta
+	elif parent.velocity.x < 0:
+		parent.velocity.x += parent.friction * delta
 	#if (direction.angle() > 0):
 		#parent.velocity.x += -direction.x * parent.friction * delta
+	
+	if parent.increase_rail_speed and parent.velocity.y >= 0:
+		parent.velocity.x = parent.velocity.x * 0.25 + parent.rail_speed
 	
 	#Makes sure the player is always oriented along the slope
 	var surface_angle = normal.angle()*180/PI
@@ -50,10 +65,10 @@ func process_physics(delta: float) -> State:
 	prev_angle = parent.rotation_degrees
 	
 	#Allows the player to properly slide off ramps when not jumping
-	if !parent.edge_ray.is_colliding() and parent.edge_ray.enabled:
-		parent.edge_ray.enabled = false
-		parent.floor_snap_length = 0.0
-		parent.velocity += 90.0 * -direction
+	#if !parent.edge_ray.is_colliding() and parent.edge_ray.enabled and parent.velocity.y < 0:
+		#parent.edge_ray.enabled = false
+		#parent.floor_snap_length = 0.0
+		#parent.velocity.y += -110.0
 	parent.move_and_slide()
 	return null
 
